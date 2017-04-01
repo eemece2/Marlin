@@ -342,3 +342,21 @@
 #else
   #define MAX6675_SS       66 // Do not use pin 49 as this is tied to the switch inside the SD card socket to detect if there is an SD card present
 #endif
+
+//////////
+// eemece2
+// Disable normal fan to be able to enable auto fan
+// See configuration_adv.h, line 110
+// http://xythobuz.de/2016_03_24_marlin_fabrikator_mini.html
+#undef FAN_PIN
+#define FAN_PIN -1
+//////////
+
+//////////
+// eemece2
+// Reverse encoder direction (LCD display rotary button) 
+#undef BTN_EN1
+#define BTN_EN1 33
+#undef BTN_EN2
+#define BTN_EN2 31
+//////////

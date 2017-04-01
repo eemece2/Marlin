@@ -106,7 +106,13 @@
    * If you get too many "Heating failed" errors, increase WATCH_BED_TEMP_PERIOD and/or decrease
    * WATCH_BED_TEMP_INCREASE. (WATCH_BED_TEMP_INCREASE should not be below 2.)
    */
-  #define WATCH_BED_TEMP_PERIOD 60                // Seconds
+//////////
+// eemece2
+// Increase period to avoid "Heating failed" errors
+// (Edit with other heatbeds)
+  //#define WATCH_BED_TEMP_PERIOD 60                // Seconds
+  #define WATCH_BED_TEMP_PERIOD 90                // Seconds
+//////////
   #define WATCH_BED_TEMP_INCREASE 2               // Degrees Celsius
 #endif
 
@@ -208,8 +214,14 @@
 // extruder temperature is above/below EXTRUDER_AUTO_FAN_TEMPERATURE.
 // Multiple extruders can be assigned to the same pin in which case
 // the fan will turn on when any selected extruder is above the threshold.
-#define EXTRUDER_0_AUTO_FAN_PIN -1
+//////////
+// eemece2
+// For hotend fan use, like E3D-v6 (to turn it on when temp is greater than EXTRUDER_AUTO_FAN_TEMPERATURE -50º-)
+// (Change it if part cooling fan is used instead)
+//#define EXTRUDER_0_AUTO_FAN_PIN -1
+#define EXTRUDER_0_AUTO_FAN_PIN 9
 #define EXTRUDER_1_AUTO_FAN_PIN -1
+//////////
 #define EXTRUDER_2_AUTO_FAN_PIN -1
 #define EXTRUDER_3_AUTO_FAN_PIN -1
 #define EXTRUDER_AUTO_FAN_TEMPERATURE 50
